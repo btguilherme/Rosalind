@@ -1,3 +1,5 @@
+heads = []
+
 def read(path):
     f = open(path, "r")
     lines = f.readlines()
@@ -6,6 +8,7 @@ def read(path):
     data = str()
     for line in lines:
         if line.startswith(">"):
+            heads.append(line)
             if len(data) > 0:
                 seqs.append(data)
             data = str()
